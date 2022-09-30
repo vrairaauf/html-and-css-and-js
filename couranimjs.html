@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>coursanimjs</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html , body , h2{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+
+		}
+		body{
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			background-color: black;
+			display: fixed;
+			flex-wrap: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+
+		}
+	/*h2{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		
+		color: white;
+		font-size: 2rem;
+		font-weight: bold;
+		text-align: center;
+		z-index: 1;
+		
+	}
+	.container{
+		width: 200px;
+		height: 200px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+	}
+	.pd{
+		background-color: red;
+		width: 50px;
+		height: 50px;
+		
+	}
+	*/
+	.pdiv{
+		background-color: rgb(200,200,200);
+		width: 200px;
+		height: 300px;
+		position: relative;
+		left: 602px;
+		top: 100px;
+		}
+	.pdiv .btn{
+		background-color: green;
+		position: absolute;
+		left: 10%;
+		top: 20px;
+		width: 80%;
+	}	
+	.ddiv{
+		background-color: rgb(200,200,200);
+		width: 200px;
+		height: 300px;
+		position: relative;
+		left: 802px;
+		bottom: 200px;
+		}
+	.ddiv .btn{
+		background-color: green;
+		position: absolute;
+		left: 10%;
+		top: 20px;
+		width: 80%;
+	}
+	.tdiv{
+		background-color: rgb(200,200,200);
+		width: 200px;
+		height: 300px;
+		position: relative;
+		left: 1002px;
+		bottom: 500px;
+		}
+	.tdiv .btn{
+		background-color: green;
+		position: absolute;
+		left: 10%;
+		top: 20px;
+		width: 80%;
+	}		
+	</style>
+
+</head>
+<body onload="change(); affiche()">
+<script type="text/javascript" src="C:\Users\mohamed\Desktop\anime-master\anime-master\lib\anime.min.js"></script>
+<div class="pdiv" id="pdiv">
+	<button class="btn">acheter</button>
+	
+</div>
+<div class="ddiv" id="pdiv">
+	<button class="btn">acheter</button>
+	
+</div>
+<div class="tdiv" id="pdiv">
+	<button class="btn">acheter</button>
+	
+</div>
+
+<!--<h2 class="ph">background animation </h2>
+<div class="container" id="container">
+	<input type="text" name="te" class="inp">
+	<div class="pd">h</div>
+	<br>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	<div class="pd">h</div>
+	-->
+	
+	<script type="text/javascript">
+		/*anime({
+			targets : ".pd",
+			translateX: 100,
+			translateX : "-100px",
+			translateY: "-50px",
+			rotateZ: 560,	
+			scale: '4',
+			duration: 5000,
+			loop: true,
+			value: [500,200],
+			round: 1,
+			duration: 3000,
+			easing: "linear",
+			direction : "alternate",
+			keyframes:[
+
+			{translateX : 150 , duration : 5000},
+			{translateY : 150},
+			{translateX : -150},
+			{translateY : -150},
+			],
+			loop: true,
+			
+			translateX : anime.stagger(150),
+			delay : anime.stagger(5000,{from:'last'}),
+			translateX: anime.stagger(10,{grid:[14,5],from: 'center' , axis: 'x'}),
+			translateY: anime.stagger(10,{grid:[14,5],from: 'center' , axis: 'Y'}),
+			rotateZ: anime.stagger([0,90],{grid:[14,5],from: 'center' , axis: 'x'}),
+			delay: anime.stagger(200,{grid:[14,5],from : 'center'}),
+			loop: true,
+			direction: 'alternate',
+			easing: 'easeInOutQuad',
+			
+		});*/
+		/*
+		anime({
+			targets: ".pdiv",
+			keyframes: [
+			{translateX : -200,  duration: 2000},
+			{translateY : -50, duration: 2000},
+			{translateY : 50, duration: 2000},
+			
+			{translateX : -500, duration: 2000},
+
+			],
+			delay: 3000	,
+			
+		});
+		
+		anime({
+			targets: ".ddiv",
+			keyframes: [
+			{translateX : -200,  duration: 2000},
+			{translateY : -50, duration: 2000},
+			{translateY : 50, duration: 2000},
+			
+			{translateX : -500, duration: 2000},
+
+			],
+			delay: 9000	,
+			
+		});
+
+		anime({
+			targets: ".tdiv",
+			keyframes: [
+			{translateX : -200,  duration: 2000},
+			{translateY : -50, duration: 2000},
+			{translateY : 50, duration: 2000},
+			
+			{translateX : -500, duration: 2000},
+
+			],
+			delay: 15000	,
+			
+		});*/
+		/*anime({
+			targets: "#idiv",
+			translateX : anime.stagger(-500),
+			duration: 3000	,
+			translateY: anime.stagger(50),
+			duration: 3000	,
+			translateY: anime.stagger(-50),
+			duration: 3000	,
+			translateX : anime.stagger(-300),
+			duration: 3000	,
+			delay: anime.stagger(4000,{from:"last"}),
+		});
+		*/
+		/*
+		function change(){
+			setTimeout((function ()
+			{anime({
+			targets: ".pdiv",
+			keyframes: [
+			{translateX : -200,  duration: 2000},
+			{translateY : -50, duration: 2000},
+			{translateY : 50, duration: 2000},
+			
+			{translateX : -500, duration: 2000},
+
+			]
+			
+			
+		});}
+				),2000);
+			
+		setTimeout((function ()
+			{anime({
+			targets: ".ddiv",
+			keyframes: [
+			{translateX : -200,  duration: 2000},
+			{translateY : -50, duration: 2000},
+			{translateY : 50, duration: 2000},
+			
+			{translateX : -500, duration: 2000},
+
+			]
+			
+			
+		});
+		}
+				),4000);
+				
+		}*/
+		anime({
+					targets: "#pdiv",
+					translateX: anime.stagger(
+							keyframes:[
+								{200,duration:2000},
+								
+							],
+						),
+				});
+		function change(){
+			var pdiv=document.getElementById('pdiv');
+			var ddiv=document.getElementById('ddiv');
+			var tdiv=document.getElementById('tdiv');
+			setTimeout((function (){
+				
+			}),3000);
+
+		}
+		//document.body.addEventListener('load',affiche);
+		function affiche(){
+			alert('hello word');
+		}
+		//setInterval(change,5000);
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>face-dedication</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="C:\Users\mohamed\Desktop\tracking.js-master\build\tracking-min.js"></script>
+<script type="text/javascript" src="C:\Users\mohamed\Desktop\tracking.js-master\build\data\face-min.js"></script>
+<script type="text/javascript" src="C:\Users\mohamed\Desktop\tracking.js-master\build\data\eye-min.js"></script>
+<script type="text/javascript" src="C:\Users\mohamed\Desktop\tracking.js-master\build\data\mouth-min.js"></script>
+
+<script type="text/javascript" src="C:\Users\mohamed\Desktop\jeu\portfolio\java script\jquery.js"></script>
+	<style type="text/css">
+		.rect{
+			border :2px solid #a64ceb;
+			left: -1000px;
+			position: absolute;
+			top: -1000px;
+			background-color: red;
+		}
+		#img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -173px 0 0 -300px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="demo-title">
+	<p><a href="">hello word</a></p>
+</div>
+<div class="demo-frame">
+	<div class="demo-container">
+		<img src="C:\Users\mohamed\Desktop\site educatif\sidebar-meet-loren.png" id="img">
+	</div>
+</div>
+<script type="text/javascript">
+	
+	window.onload=function (){
+		var img=document.getElementById('img');
+
+		var tracker = new tracking.ObjectTracker(['face' , 'eye' , 'mouth']);
+
+		tracker.setStepSize(1.7);
+
+		tracking.track('#img' , tracker);
+
+		 tracker.on('track', function(event){
+				alert('gggg');
+			event.data.forEach(function(rect){
+
+				window.plot(rect.X, rect.Y , rect.width , rect. height);
+
+			});
+		});
+		window.plot= function (x , y , w , h ){
+
+			var rect= document.createElement('div');
+			document.querySelector('.demo-container').appendChild(rect);
+			rect.classList.add('rect');
+			rect.style.width= w + "px";
+			rect.style.height= h + "px";
+			rect.style.left= (img.offsetLeft + X) + "px";
+			rect.style.left= (img.offsetTop + Y) + "px";
+			rect.style.width= w + "px";
+
+		};
+	};
+</script>
+</body>
+</html>

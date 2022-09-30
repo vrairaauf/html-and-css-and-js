@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>capatche</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			margin: 0;
+			background-color: rgb(4,255,255,0.6);
+			
+		}
+		h2{
+			font-size: xx-large;
+			font-weight: 
+			color:white;
+			text-transform: capitalize;
+			text-align: center;
+			letter-spacing: 0.4px;
+			word-spacing: 1px;
+		}
+		form{
+			width: 40%;
+			position: relative;
+			left: 30%;
+			top: 50px;
+			background-color: rgb(222,222,222);
+			height: 	180px;
+			border-radius: 30px;
+		}
+		form input[name="capatcha"] {
+			width: 90%;
+			position: absolute;
+			left: 5%;
+			top: 10px;
+			height: 22px;
+			background-color: rgb(232,232,232);
+			letter-spacing: 1px;
+			text-align: center;
+			font-size: x-large;
+			font-weight: bold;
+			border-radius: 30px;
+			border-width: 1px;
+			border-color: blue;
+
+		}
+		form input[name="copier"]{
+			width: 80%;
+			position: absolute;
+			left: 10%;
+			top: 70px;
+			background-color: rgb(232,232,232);
+			letter-spacing: 1px;
+			text-align: center;
+			font-size: x-large;
+			font-weight: bold;
+			height: 22px;
+			border-radius: 30px;
+			border-width: 1px;
+			border-color: blue;
+		}
+		form input[type="submit"]{
+			width: 50%;
+			height: 18px;
+			border-radius: 30px;
+			position: absolute;
+			left: 25%;
+			top: 130px;
+			border-width: 1px;
+			border-color: blue;
+			text-transform: uppercase;
+			font-size: medium;
+			font-weight: bold;
+			letter-spacing: 1px;
+
+		}
+		form span{
+			position: absolute;
+			left: 15%;
+			top: 100px;
+			font-size: medium;
+			font-weight: bold;
+			letter-spacing: 1px;
+			word-spacing: 2px;
+			color: red;
+		}
+		button{
+			background-color: rgb(93,93,93);
+			color: white;
+			font-size: 12;
+			font-weight: bold;
+			width: 60px;
+			height: 22px;
+			border-radius: 30px;
+			border-color: blue;
+			border-width: 1px;
+			position: relative;
+			left: 44%;
+			top: 83px;
+			display: none;
+
+		}
+	</style>
+</head>
+<body>
+<h2>capatcha</h2>
+<br>
+<form name="f" method="get" action="">
+	<input type="text" name="capatcha" readonly="" id="cap">
+	<br>
+	<input type="text" name="copier" id="copier" onblur="saisir()" onfocus="effet(this)">
+	<br>
+	<span id="sp"></span>
+	<br>
+	<input type="submit" name="submit" id="submit">
+	<br>
+	<button id="essayer" >essayer</button>
+
+</form>
+<script type="text/javascript">
+	var mot="123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
+	function cxap(){
+		var x=mot[Math.floor(Math.random() * mot.length)];
+	for(var i=0;i<4;i++){
+		x=x+mot[Math.floor(Math.random() * mot.length)];
+	}
+	cap.value=x;
+	x='';
+}
+	window.load=cxap();
+var id=document.getElementById('cap');
+var copier=document.getElementById('copier');
+var sp=document.getElementById('sp');
+var submit=document.getElementById('submit');
+var essayer=document.getElementById('essayer');
+submit.addEventListener('click',block);
+function block(e){
+	
+	if( v == 1){
+		
+	e.preventDefault();
+	essayer.style.display="block";
+	
+}
+}
+essayer.addEventListener('click',fon);
+function fon(e){
+	cap.value='';
+	copier.value='';
+	sp.textContent="";
+	copier.focus();
+	e.preventDefault();
+	
+	cxap();
+}
+function effet(e){
+
+	e.style.color="black";
+}
+var v;
+function saisir(){
+if(copier.value != cap.value)
+{
+	sp.textContent="resaisir le capatche"	;
+	
+	copier.style.borderColor="red";
+	copier.style.color="red";
+	v=1;
+	
+
+}else{
+	sp.textContent="";
+	copier.style.borderColor="green";
+	copier.style.color="green";
+	v=0;
+}
+}
+</script>
+</body>
+</html>
